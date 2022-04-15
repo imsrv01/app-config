@@ -1,6 +1,25 @@
-kind: Project
-apiVersion: project.openshift.io/v1
+# kind: Project
+# apiVersion: project.openshift.io/v1
+# metadata:
+#   name: spring-petclinic
+#   labels:
+#     kubernetes.io/metadata.name: spring-petclinic
+
+apiVersion: v1
+kind: Namespace
 metadata:
   name: spring-petclinic
-  labels:
-    kubernetes.io/metadata.name: spring-petclinic
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: spring-petclinic-role-binding
+  namespace: spring-petclinic
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+subjects:
+- kind: ServiceAccount
+  name: argocd-cluster-argocd-application-controller
+  namespace: openshift-gitops
