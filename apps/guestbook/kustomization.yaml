@@ -1,8 +1,0 @@
-
-namePrefix: kustomize-
-
-resources:
-- guestbook-ui-deployment.yaml
-- guestbook-ui-svc.yaml
-- frontend-route.yaml
-
