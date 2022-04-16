@@ -1,16 +1,12 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  annotations:
-    openshift.io/host.generated: "true"
-  labels:
-    app: guestbook
-  name: guestbook-route
+  name: guestbook
+  namespace: guestbook
 spec:
-  path: /
+  port:
+    targetPort: 80
   to:
     kind: Service
     name: frontend
     weight: 100
-  port:
-    targetPort: 80
