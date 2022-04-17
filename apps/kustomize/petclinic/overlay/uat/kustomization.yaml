@@ -1,0 +1,12 @@
+
+namespace: uat-spring-petclinic
+
+resources:
+- patches/namespace.yaml
+- ../../base
+
+patches:
+- path: patches/deployment-replica.yaml
+  target: 
+    kind: Deployment
+    name: spring-petclinic
