@@ -1,11 +1,7 @@
-# kind: Project
-# apiVersion: project.openshift.io/v1
-# metadata:
-#   name: spring-petclinic
-#   labels:
-#     kubernetes.io/metadata.name: spring-petclinic
-
+---
 apiVersion: v1
 kind: Namespace
 metadata:
   name: dev-spring-petclinic
+  labels:
+    argocd.argoproj.io/managed-by: openshift-gitops
