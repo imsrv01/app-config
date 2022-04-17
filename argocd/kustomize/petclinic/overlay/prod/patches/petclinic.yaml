@@ -5,13 +5,11 @@ metadata:
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: spring-petclinic
+    namespace: prod-spring-petclinic
     server: https://kubernetes.default.svc
   project: default
   source:
-    directory:
-      recurse: true
-    path: apps/petclinic
+    path: apps/kustomize/petclinic/overlay/prod
     repoURL: https://github.com/imsrv01/openshift-gitops.git
     targetRevision: main
   syncPolicy:

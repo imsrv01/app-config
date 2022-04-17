@@ -1,12 +1,7 @@
 
-namespace: prod-spring-petclinic
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 
 resources:
-- patches/namespace.yaml
-- ../../base
-
-patches:
-- path: patches/deployment-replica.yaml
-  target: 
-    kind: Deployment
-    name: spring-petclinic
+#- patches/namespace.yaml
+- patches/petclinic.yaml

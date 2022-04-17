@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-spring-petclinic
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: uat-spring-petclinic
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/kustomize/petclinic/overlay/uat
+    repoURL: https://github.com/imsrv01/openshift-gitops.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
