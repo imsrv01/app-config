@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-spring-petclinic
+  name: prod-app-spring-petclinic
   namespace: openshift-gitops
 spec:
   destination:
