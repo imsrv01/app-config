@@ -12,8 +12,6 @@ spec:
     path: apps/kustomize/petclinic/overlay/dev
     repoURL: https://github.com/imsrv01/openshift-gitops.git
     targetRevision: main
-    kustomize:
-      version: v3.5.4
   syncPolicy:
     automated:
       prune: true
