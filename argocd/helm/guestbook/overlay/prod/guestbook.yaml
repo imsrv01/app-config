@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-guestbook
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/imsrv01/openshift-gitops.git'
+    path: apps/helm/guestbook
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values-prod.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: prod-guestbook
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
