@@ -31,7 +31,7 @@ oc apply -f argocd/helm/guestbook/overlay/prod/guestbook.yaml
 
 ```
 
-## Deploy app through Red Hat Advanced cluster manager for kuberneted (RHACM)
+## Deploy app through Red Hat Advanced cluster manager for kubernetes (RHACM)
 
 Deploy petclinc application using kustomize
 
