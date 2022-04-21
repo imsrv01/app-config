@@ -7,6 +7,11 @@ oc extract secret/openshift-gitops-cluster -n openshift-gitops --to=-
 
 ```
 
+```
+helm template apps/helm/guestbook
+
+```
+
 ## Deploy app through ArgoCD
 
 Deploy petclinic application using argocdkustomize overlay
