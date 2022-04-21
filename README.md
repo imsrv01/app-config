@@ -7,6 +7,11 @@ oc extract secret/openshift-gitops-cluster -n openshift-gitops --to=-
 
 ```
 
+```
+helm template apps/helm/guestbook
+
+```
+
 ## Deploy app through ArgoCD
 
 Deploy petclinic application using argocdkustomize overlay
@@ -31,7 +36,7 @@ oc apply -f argocd/helm/guestbook/overlay/prod/guestbook.yaml
 
 ```
 
-## Deploy app through Red Hat Advanced cluster manager for kuberneted (RHACM)
+## Deploy app through Red Hat Advanced cluster manager for kubernetes (RHACM)
 
 Deploy petclinc application using kustomize
 
